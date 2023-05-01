@@ -1,0 +1,35 @@
+{
+    "name": "Microsoft Teams Client Hook",
+    "version": "1.0.0.0",
+    "manifest_version": 2,
+    "description": "An extension that forwards all notifications about incoming calls to the provided web hook.",
+    "icons": {
+        "16": "icons/icon16x16.png",
+        "32": "icons/icon32x32.png",
+        "48": "icons/icon48x48.png",
+        "128": "icons/icon128x128.png"
+    },
+    "browser_action": {
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": [
+        "webRequest"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "all_frames": true
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    }
+}
