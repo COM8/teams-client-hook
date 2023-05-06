@@ -13,12 +13,13 @@
         "default_popup": "popup/popup.html"
     },
     "permissions": [
-        "webRequest"
+        "webRequest",
+        "storage"
     ],
     "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                "*://*.teams.microsoft.com/*"
             ],
             "js": [
                 "content.js"
@@ -31,5 +32,10 @@
             "background.js"
         ],
         "persistent": true
+    },
+    "externally_connectable": {
+        "matches": [
+            "*://*.teams.microsoft.com/*"
+        ]
     }
 }
