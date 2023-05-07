@@ -1,4 +1,3 @@
-
 chrome.storage.local.get(["url"], function (result) {
     document.getElementById("url").value = result["url"];
     console.log("URL loaded: ", result["url"])
